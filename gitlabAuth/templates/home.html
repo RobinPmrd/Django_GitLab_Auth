@@ -1,0 +1,10 @@
+{% load socialaccount %}
+
+<h1>GitLab Auth Test</h1>
+
+{% if request.user.is_authenticated %}
+    <p>Vous êtes connecté en tant que {{request.user}} avec l'addresse mail : {{request.user.email}}</p>
+    <a href="{% url 'account_logout' %}">Log out</a>
+{% else %}
+    <a href="{% provider_login_url 'gitlab' %}">Login with GitLab</a>
+{% endif %}
