@@ -6,9 +6,9 @@ Start it : `source venv/bin/activate`
 Install requirements : `pip install -r 'requirements.txt'`
 
 Create environnement file *.env* in */gitlabAuth/gitlabAuth* and provide GitLab informations :  
-- GITLAB_CLIENT_ID=<client_id>
-- GITLAB_SECRET=<secret>
-- GITLAB_URL=<url>
+- GITLAB_CLIENT_ID=\<client_id>
+- GITLAB_SECRET=\<secret>
+- GITLAB_URL=\<url>
 
 Run the app :
 ```bash

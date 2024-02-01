@@ -1,10 +1,28 @@
+{% load static %}
 {% load socialaccount %}
 
-<h1>GitLab Auth Test</h1>
+<html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Django GitLab Auth</title>
+      <link rel="stylesheet" href="{% static 'css/home.css' %}" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+        <h1>GitLab Auth Test</h1>
 
-{% if request.user.is_authenticated %}
-    <p>Vous êtes connecté en tant que {{request.user}} avec l'addresse mail : {{request.user.email}}</p>
-    <a href="{% url 'account_logout' %}">Log out</a>
-{% else %}
-    <a href="{% provider_login_url 'gitlab' %}">Login with GitLab</a>
-{% endif %}
+        {% if request.user.is_authenticated %}
+            <p>Vous êtes connectés en tant que {{request.user}} avec l'adresse mail : {{request.user.email}}</p>
+            <a href="{% url 'account_logout' %}">Log out</a>
+        {% else %}
+            <form action="{% provider_login_url 'gitlab' %}" method="post">
+                <p>Se connecter avec </p>
+                {% csrf_token %}
+                <button type="submit">
+                    <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/144_Gitlab_logo_logos-1024.png" alt="GitLab">
+                </button>
+            </form>
+        {% endif %}
+    </div>
+  </body>
+</html>
