@@ -13,5 +13,6 @@ Create environnement file *.env* in */gitlabAuth/gitlabAuth* and provide GitLab 
 Run the app :
 ```bash
 cd gitlabAuth
+python manage.py migrate
 python manage.py runserver 8080
 ```
