@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.gitlab',
+    'landing',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +66,8 @@ ROOT_URLCONF = 'gitlabAuth.urls'
 LOGIN_REDIRECT_URL = '/'
 
 ACCOUNT_LOGOUT_ON_GET = True
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 TEMPLATES = [
     {
